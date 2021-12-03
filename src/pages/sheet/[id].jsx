@@ -434,11 +434,11 @@ function Sheet({
                 </Grid>
               </Section>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} >
               <Section
                 title="Perícias"
               >
-                <Grid container item xs={12} >
+                <Grid container item xs={12} pacing={3} >
                   {
                     character.skills.map((each, index) => (
                       <Grid item xs={4} key={index}>
