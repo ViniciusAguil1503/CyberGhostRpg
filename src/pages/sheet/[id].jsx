@@ -439,32 +439,6 @@ function Sheet({
               title="Pericias em Acesso Rapido"
               >
                 <Grid container item xs={12} spacing={3}>
-                {
-                    character.skill.map((each, index) => (
-                      <Grid item xs={6} key={index}>
-                        <SheetEditableRow
-                          data={{
-                            name: each.skill.name,
-                            value: each.value,
-                            description: each.skill.description
-                          }}
-                          onValueChange={newValue => {
-                            api.put('/character/skill', {
-                              character_id: character.id,
-                              attribute_id: each.skill.id,
-                              value: newValue
-                            })
-                            .catch(err => {
-                              alert(`Erro ao atualizar o valor! Erro: ${err.toString()}`);
-                            })
-                          }}
-                          onInput={newValue => {
-                            updateCharacterAttributeValue(each, newValue);
-                          }}
-                        />
-                      </Grid>
-                    ))
-                  }
                 </Grid>
               </section>
             </Grid>
