@@ -438,7 +438,7 @@ function Sheet({
               <Section
                 title="Perícias"
               >
-                <Grid container item xs={12} spacing={3}>
+                <Grid container item xs={12} >
                   {
                     character.skills.map((each, index) => (
                       <Grid item xs={4} key={index}>
