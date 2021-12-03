@@ -434,7 +434,7 @@ function Sheet({
                 </Grid>
               </Section>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={6}>
               <Section
                 title="Perícias"
               >
