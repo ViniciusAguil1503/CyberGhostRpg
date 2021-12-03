@@ -13,8 +13,15 @@ model Character {
   age Int?
   gender String?
   player_name String?
+  bio String?
+  lvl Int?
+  profission String?
   current_hit_points Int @default(0)
   max_hit_points Int @default(0)
+  current_san_points Int @default(0)
+  max_san_points Int @default(0)
+  current_par_points Int @default(0)
+  max_par_points Int @default(0)
   current_picture Int @default(1)
   is_dead Boolean @default(false)
   standard_character_picture_url String?

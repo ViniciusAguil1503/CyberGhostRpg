@@ -8,6 +8,8 @@ import ConfirmationModal from './modals/ConfirmationModal'
 import AttributeModal from './modals/AttributeModal'
 import SkillModal from './modals/SkillModal'
 import StatusBarModal from './modals/StatusBarModal'
+import StatusBarParModal from './modals/StatusBarParModal'
+import StatusBarSanModal from './modals/StatusBarSanModal'
 import InfoModal from './modals/InfoModal'
 import GeneratePortraitModal from './modals/GeneratePortraitModal'
 import DiceRollModal from './modals/DiceRollModal'
@@ -19,6 +21,10 @@ import SheetEditableRow from './SheetEditableRow'
 import Loader from './Loader'
 
 import StatusBar from './StatusBar'
+
+import StatusBarPar from './StatusBarPar'
+
+import StatusBarSan from './StatusBarSan'
 
 import TextFieldIcon from './TextFieldIcon'
 
@@ -33,6 +39,8 @@ export {
     AttributeModal,
     SkillModal,
     StatusBarModal,
+    StatusBarParModal,
+    StatusBarSanModal,
     InfoModal,
     GeneratePortraitModal,
     DiceRollModal,
@@ -42,6 +50,8 @@ export {
     Loader,
 
     StatusBar,
+    StatusBarSan,
+    StatusBarPar,
 
     SheetEditableRow,
 
