@@ -434,6 +434,14 @@ function Sheet({
                 </Grid>
               </Section>
             </Grid>
+            <Grid item xs={12} md={6}>
+              <section
+              title="Pericias em Acesso Rapido"
+              >
+                <Grid container item xs={12} spacing={3}> 
+                </Grid>
+              </section>
+            </Grid>
             <Grid item xs={12} >
               <Section
                 title="Perícias"
