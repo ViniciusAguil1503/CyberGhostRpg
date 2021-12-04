@@ -126,6 +126,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             justifyContent: 'center',
             color: '#0a8fe8',
             gap: '3px',
+            marginLeft: '10px',
           }}
         >
           {character.current_san_points === 0 ? (
@@ -144,7 +145,6 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             justifyContent: 'center',
             gap: '10px',
             marginTop: '10px',
-                 marginRight: '10px',
           }}
         >
           </div>
@@ -156,7 +156,6 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
             justifyContent: 'center',
             gap: '10px',
             marginTop: '10px',
-                 marginLeft: '10px',
           }}
         >
           <div>
