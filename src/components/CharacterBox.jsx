@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import Image from 'next/image';
 
 import {
-  Link as LinkIcon,
+  Link as AccountBoxIcon,
   Delete as DeleteIcon,
   Favorite as HeartIcon,
   FavoriteBorder as HeartIconNoLife,
@@ -165,7 +165,7 @@ function CharacterBox({ classes, character, deleteCharacter, ...rest }) {
               target="_blank"
               className={classes.btn}
             >
-              <LinkIcon />
+              <AccountBoxIcon />
             </Button>
           </div>
           <div>
