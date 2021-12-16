@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import AddIcon from '@mui/icons-material/Add';
 
 import { Grid, Container, Button } from '@mui/material';
 import { withStyles } from '@mui/styles';
@@ -472,6 +475,21 @@ function Sheet({
                         />
                       </Grid>
                     ))
+                  }
+                </Grid>
+              </Section>
+            </Grid>
+            <Grid item xs={12} >
+              <Section
+                title="Inventário"
+              >
+                <Grid container item xs={12} spacing={3}>
+                  {
+                    <IconButton color="secondary" aria-label="adicionar item">
+                    <AddIcon />
+                  </IconButton>
+                   
+                    
                   }
                 </Grid>
               </Section>
