@@ -8,6 +8,7 @@ CREATE TABLE `character` (
     `bio` VARCHAR(0) NULL,
     `lvl` INTEGER NULL,
     `profission` VARCHAR(191) NULL,
+    `amount` INTEGER NULL,
     `current_hit_points` INTEGER NOT NULL DEFAULT 0,
     `max_hit_points` INTEGER NOT NULL DEFAULT 0,
     `current_san_points` INTEGER NOT NULL DEFAULT 0,
