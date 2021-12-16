@@ -16,7 +16,6 @@ model Character {
   bio String?
   lvl Int?
   profission String?
-  amount Int?
   current_hit_points Int @default(0)
   max_hit_points Int @default(0)
   current_san_points Int @default(0)
