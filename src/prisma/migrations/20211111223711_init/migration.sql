@@ -5,7 +5,7 @@ CREATE TABLE `character` (
     `age` INTEGER NULL,
     `gender` VARCHAR(191) NULL,
     `player_name` VARCHAR(191) NULL,
-    `bio` VARCHAR(191) NULL,
+    `bio` VARCHAR(0) NULL,
     `lvl` INTEGER NULL,
     `profission` VARCHAR(191) NULL,
     `current_hit_points` INTEGER NOT NULL DEFAULT 0,
