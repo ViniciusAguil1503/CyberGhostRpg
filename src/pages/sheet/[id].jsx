@@ -28,25 +28,6 @@ import useModal from '../../hooks/useModal';
 
 const prisma = new PrismaClient();
 
-addEventListener('click', function (evt){
-  if (evt.detail === 3) {
-    alert('triple click');
-  }
-});
-
-var throttle =false;
-
-document.querySelector('Image').addEventListener('click', function
-(evt) {
-   var o = this,
-       ot = this.StatusBarPe;
-
-   if (!throttle && evt.detail === 3) {
-       this.StatusBarPe = appear,
-       throttle = true
-   }    
-});
-
 export const getServerSideProps = async ({ params }) => {
   const characterId = isNaN(params.id) ? null : Number(params.id);
 
