@@ -487,15 +487,15 @@ function Sheet({
                 title="Inventário"
               >
                 <Grid container item xs={12} spacing={3}>
-                <FormControl fullWidth sx={{ m: 1 }} variant="standard">
-                  <InputLabel htmlFor="standard-adornment-amount">Dinheiro</InputLabel>
-                  <Input
-            id="standard-adornment-amount"
-            value={values.amount}
-            onChange={handleChange('amount')}
-            startAdornment={<InputAdornment position="start">£</InputAdornment>}
+                <TextField
+                 label="Dinheiro"
+                 id="money"
+                 sx={{m: 1, width: '24ch'}}
+                 InputProps={{
+                   startAdornment: <InputAdornment position="start">$</InputAdornment>
+                 }}
+                  variant="standard"
                   />
-               </FormControl>
                     <IconButton color="secondary" aria-label="adicionar item">
                     <AddIcon />
                   </IconButton>
