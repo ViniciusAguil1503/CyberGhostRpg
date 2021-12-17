@@ -15,9 +15,9 @@ import { api } from '../../utils';
 import socket from '../../utils/socket';
 
 import {
-  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, 
+  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, StatusBarPe,
 
-  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal
+  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal,
 } from '../../components';
 
 import {
@@ -416,6 +416,13 @@ function Sheet({
                             ParPointsModal.appear();
                           }}
                         />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                      <Grid item xs={12} className={classes.alignCenter}>
+                    <Grid container item xs={12} className={classes.bar}>
+                      <Grid item xs={12} className={classes.barTitle}>
+                        <span>Pontos de Esforço</span>
                       </Grid>
                       <Grid item xs={12}>
                         <StatusBarPe
