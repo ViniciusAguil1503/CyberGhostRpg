@@ -28,7 +28,7 @@ import useModal from '../../hooks/useModal';
 
 const prisma = new PrismaClient();
 
-window.addEventListener('click', function (evt){
+addEventListener('click', function (evt){
   if (evt.detail === 3) {
     alert('triple click');
   }
