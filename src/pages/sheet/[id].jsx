@@ -28,6 +28,25 @@ import useModal from '../../hooks/useModal';
 
 const prisma = new PrismaClient();
 
+window.addEventListener('click', function (evt){
+  if (evt.detail === 3) {
+    alert('triple click');
+  }
+});
+
+var throttle =false;
+
+document.querySelector('Image').addEventListener('click', function
+(evt) {
+   var o = this,
+       ot = this.StatusBarPe;
+
+   if (!throttle && evt.detail === 3) {
+       this.StatusBarPe = appear,
+       throttle = true
+   }    
+});
+
 export const getServerSideProps = async ({ params }) => {
   const characterId = isNaN(params.id) ? null : Number(params.id);
 
@@ -398,6 +417,18 @@ function Sheet({
                           }}
                         />
                       </Grid>
+                      <Grid item xs={12}>
+                        <StatusBarPe
+                          current={character.current_pe_points}
+                          max={character.max_pe_points}
+                          label={`${character.current_pe_points}/${character.max_pe_points}`}
+                          primaryColor="#e2e2e2"
+                          secondaryColor="#adadad"
+                          onClick={() => {
+                            PePointsModal.appear();
+                          }}
+                        />
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -485,15 +516,19 @@ function Sheet({
               >
                 <Grid container item xs={12} spacing={3}>
                 <TextField
+                 type="number"
                  label="Dinheiro"
-                 id="money"
+                 name="money"
+                 value={values.money}
+                 onChange={handleChange}
+                 error={errors.money}
                  sx={{m: 1, width: '24ch'}}
                  InputProps={{
                    startAdornment: <InputAdornment position="start">$</InputAdornment>
                  }}
                   variant="standard"
-                  />
-                    <IconButton color="secondary" aria-label="adicionar item">
+                />
+                 <IconButton color="secondary" aria-label="adicionar item">
                     <AddIcon />
                   </IconButton>
                 </Grid>
