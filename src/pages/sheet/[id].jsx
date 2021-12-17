@@ -3,8 +3,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
 
 import { Grid, Container, Button } from '@mui/material';
 import { withStyles } from '@mui/styles';
@@ -484,13 +487,18 @@ function Sheet({
                 title="Inventário"
               >
                 <Grid container item xs={12} spacing={3}>
-                  {
+                <FormControl fullWidth sx={{ m: 1 }} variant="standard">
+                  <InputLabel htmlFor="standard-adornment-amount">Dinheiro</InputLabel>
+                  <Input
+            id="standard-adornment-amount"
+            value={values.amount}
+            onChange={handleChange('amount')}
+            startAdornment={<InputAdornment position="start">£</InputAdornment>}
+                  />
+               </FormControl>
                     <IconButton color="secondary" aria-label="adicionar item">
                     <AddIcon />
                   </IconButton>
-                   
-                    
-                  }
                 </Grid>
               </Section>
             </Grid>
