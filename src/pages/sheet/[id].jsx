@@ -3,8 +3,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 
 import { Grid, Container, Button } from '@mui/material';
 import { withStyles } from '@mui/styles';
@@ -484,6 +485,18 @@ function Sheet({
                 title="Inventário"
               >
                 <Grid container item xs={12} spacing={3}>
+                <TextField
+                        variant="standard"
+                        label="Dinheiro"
+                        name="money"
+                        value={values.money}
+                        sx={{m: 1, width: '25ch'}}
+                        InputProps={{
+                           startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                        }}
+                        onChange={handleChange}
+                        error={errors.player_name}
+                    />
                   {
                     <IconButton color="secondary" aria-label="adicionar item">
                     <AddIcon />
