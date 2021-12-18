@@ -489,7 +489,6 @@ function Sheet({
                         variant="standard"
                         label="Dinheiro"
                         name="money"
-                        value={values.money}
                         sx={{m: 1, width: '25ch'}}
                         InputProps={{
                            startAdornment: <InputAdornment position="start">$</InputAdornment>,
