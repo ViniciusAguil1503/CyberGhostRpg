@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
+
 import { Grid, Container, Button } from '@mui/material';
 import { withStyles } from '@mui/styles';
 import { PrismaClient } from '@prisma/client';
@@ -15,9 +15,9 @@ import { api } from '../../utils';
 import socket from '../../utils/socket';
 
 import {
-  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, StatusBarPe,
+  Header, Section, StatusBar, StatusBarPar, StatusBarSan, SheetEditableRow, 
 
-  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, StatusBarPeModal, ChangePictureModal,
+  DiceRollModal, StatusBarModal, StatusBarParModal, StatusBarSanModal, ChangePictureModal
 } from '../../components';
 
 import {
@@ -167,31 +167,6 @@ function Sheet({
         });
     });
   }
-
-  const onPePointsModalSubmit = async newData => {
-    return new Promise((resolve, reject) => {
-      const data = {
-        current_pe_points: Number(newData.current),
-        max_pe_points: Number(newData.max)
-      }
-
-      api
-        .put(`/character/${character.id}`, data)
-        .then(() => {
-          updateCharacterState(data);
-
-          resolve();
-
-          socket.emit('update_pe_points', { character_id: character.id, current: data.current_pe_points, max: data.max_pe_points });
-        })
-        .catch(err => {
-          alert(`Erro ao atualizar os pontos de esforço!`, err);
-
-          reject();
-        });
-    });
-  }
-
   useEffect(() => {
     setCharacter(rawCharacter);
   }, [rawCharacter]);
@@ -229,21 +204,6 @@ function Sheet({
       }}
     />
   ));
-
-  const PePointsModal = useModal(({ close }) => (
-    <StatusBarPeModal
-      type="ep"
-      onSubmit={async newData => {
-        onPePointsModalSubmit(newData).then(() => close());
-      }}
-      handleClose={close}
-      data={{
-        current: character.current_pe_points,
-        max: character.max_pe_points
-      }}
-    />
-  ));
-
   const SanPointsModal = useModal(({ close }) => (
     <StatusBarSanModal
       type="sn"
@@ -440,25 +400,6 @@ function Sheet({
                       </Grid>
                     </Grid>
                   </Grid>
-                      <Grid item xs={12} className={classes.alignCenter}>
-                    <Grid container item xs={12} className={classes.bar}>
-                      <Grid item xs={12} className={classes.barTitle}>
-                        <span>Pontos de Esforço</span>
-                      </Grid>
-                      <Grid item xs={12}>
-                        <StatusBarPe
-                          current={character.current_pe_points}
-                          max={character.max_pe_points}
-                          label={`${character.current_pe_points}/${character.max_pe_points}`}
-                          primaryColor="#e2e2e2"
-                          secondaryColor="#adadad"
-                          onClick={() => {
-                            PePointsModal.appear();
-                          }}
-                        />
-                      </Grid>
-                    </Grid>
-                  </Grid>
                 </Grid>
               </Section>
             </Grid>
@@ -543,20 +484,13 @@ function Sheet({
                 title="Inventário"
               >
                 <Grid container item xs={12} spacing={3}>
-                <TextField
-                 type="number"
-                 label="Dinheiro"
-                 id="money"
-                 onChange={handleChange}
-                 sx={{m: 1, width: '24ch'}}
-                 InputProps={{
-                   startAdornment: <InputAdornment position="start">$</InputAdornment>
-                 }}
-                  variant="standard"
-                />
-                 <IconButton color="secondary" aria-label="adicionar item">
+                  {
+                    <IconButton color="secondary" aria-label="adicionar item">
                     <AddIcon />
                   </IconButton>
+                   
+                    
+                  }
                 </Grid>
               </Section>
             </Grid>
