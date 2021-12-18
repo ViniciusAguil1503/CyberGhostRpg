@@ -546,10 +546,8 @@ function Sheet({
                 <TextField
                  type="number"
                  label="Dinheiro"
-                 name="money"
-                 value={values.money}
+                 id="money"
                  onChange={handleChange}
-                 error={errors.money}
                  sx={{m: 1, width: '24ch'}}
                  InputProps={{
                    startAdornment: <InputAdornment position="start">$</InputAdornment>
