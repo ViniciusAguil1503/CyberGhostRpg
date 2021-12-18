@@ -488,13 +488,11 @@ function Sheet({
                 <TextField
                         variant="standard"
                         label="Dinheiro"
-                        name="money"
+                        id="money"
                         sx={{m: 1, width: '25ch'}}
                         InputProps={{
                            startAdornment: <InputAdornment position="start">$</InputAdornment>,
                         }}
-                        onChange={handleChange}
-                        error={errors.player_name}
                     />
                   {
                     <IconButton color="secondary" aria-label="adicionar item">
