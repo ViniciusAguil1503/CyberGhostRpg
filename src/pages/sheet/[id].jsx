@@ -167,6 +167,31 @@ function Sheet({
         });
     });
   }
+
+  const onPePointsModalSubmit = async newData => {
+    return new Promise((resolve, reject) => {
+      const data = {
+        current_pe_points: Number(newData.current),
+        max_pe_points: Number(newData.max)
+      }
+
+      api
+        .put(`/character/${character.id}`, data)
+        .then(() => {
+          updateCharacterState(data);
+
+          resolve();
+
+          socket.emit('update_pe_points', { character_id: character.id, current: data.current_pe_points, max: data.max_pe_points });
+        })
+        .catch(err => {
+          alert(`Erro ao atualizar os pontos de esforço!`, err);
+
+          reject();
+        });
+    });
+  }
+
   useEffect(() => {
     setCharacter(rawCharacter);
   }, [rawCharacter]);
@@ -204,6 +229,21 @@ function Sheet({
       }}
     />
   ));
+
+  const PePointsModal = useModal(({ close }) => (
+    <StatusBarPeModal
+      type="ep"
+      onSubmit={async newData => {
+        onPePointsModalSubmit(newData).then(() => close());
+      }}
+      handleClose={close}
+      data={{
+        current: character.current_pe_points,
+        max: character.max_pe_points
+      }}
+    />
+  ));
+
   const SanPointsModal = useModal(({ close }) => (
     <StatusBarSanModal
       type="sn"
