@@ -18,3 +18,5 @@ const styling = {
     }
 
 export default theme
+export default styling
+export default img
