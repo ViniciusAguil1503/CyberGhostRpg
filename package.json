@@ -12,6 +12,7 @@
   "prisma": {
     "schema": "src/prisma/schema.prisma"
   },
+  { "engines" : { "node" : ">=16.16.0" } }
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/server": "^11.4.0",
